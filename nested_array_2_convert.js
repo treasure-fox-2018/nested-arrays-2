@@ -12,9 +12,34 @@ let roster = [
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
 
 function convert_roster_format (nestedArray) {
-  // your convert code here
-}
+  var arrOfObjPlayersInfo = [];
+  var arrFacts = [];
+  var keyfigures = nestedArray[0]
 
+  for (var k = 0; k < keyfigures.length; k++) {
+    arrFacts.push(keyfigures[k])
+  }
+
+  console.log(arrFacts);
+  nestedArray.shift();
+
+  for (var j = 1; j < nestedArray.length; j++) {
+    arrOfObjPlayersInfo.push({})
+  }
+
+console.log(arrOfObjPlayersInfo);
+
+  var indexNestedArray = 0;
+  for (var i = 0; i < arrFacts.length; i++) {
+    var key = arrFacts[i];
+    for (var m = 0; m < arrOfObjPlayersInfo.length; m++) {
+      arrOfObjPlayersInfo[m][key] = nestedArray[m][indexNestedArray];
+    }
+    indexNestedArray ++;
+  }
+  return (arrOfObjPlayersInfo);
+}
+//
 let object_roster = convert_roster_format(roster)
 console.log(object_roster[2])
 
