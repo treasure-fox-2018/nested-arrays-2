@@ -33,10 +33,3 @@ console.log(object_roster[0]['Name'] == 'Joe Schmo') // outputs true
 module.exports = {
   convert_roster_format
 }
-
-/*
-obj[nestedArray[0][0]] = nestedArray[a][0]
-    obj[nestedArray[0][1]] = nestedArray[a][1]
-    obj[nestedArray[0][2]] = nestedArray[a][2]
-    obj[nestedArray[0][3]] = nestedArray[a][3]
-*/
