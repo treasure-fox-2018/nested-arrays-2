@@ -13,14 +13,11 @@ let roster = [
 
 function convert_roster_format (nestedArray) {
   let convertArr = []
-  for(var a = 1; a < nestedArray.length; a++) {
+  for(var a = 1; a <= nestedArray.length-1; a++) {
     var obj = {}
-    
-    obj[nestedArray[0][0]] = nestedArray[a][0]
-    obj[nestedArray[0][1]] = nestedArray[a][1]
-    obj[nestedArray[0][2]] = nestedArray[a][2]
-    obj[nestedArray[0][3]] = nestedArray[a][3]
-
+    for (var b = 0; b <= nestedArray[a].length-1; b++) {
+      obj[nestedArray[0][b]] = nestedArray[a][b]
+    }
     convertArr.push(obj)
   }
   return convertArr
@@ -36,3 +33,10 @@ console.log(object_roster[0]['Name'] == 'Joe Schmo') // outputs true
 module.exports = {
   convert_roster_format
 }
+
+/*
+obj[nestedArray[0][0]] = nestedArray[a][0]
+    obj[nestedArray[0][1]] = nestedArray[a][1]
+    obj[nestedArray[0][2]] = nestedArray[a][2]
+    obj[nestedArray[0][3]] = nestedArray[a][3]
+*/
